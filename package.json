@@ -7,7 +7,7 @@
   "author": "DMRID - DSF Team",
   "license": "MIT",
   "scripts": {
-      "start": "http-server -c-1 -p 3000 -o /"
+      "start": "http-server -c-1 -p 3000 -o docs/"
   },
   "devDependencies": {
       "http-server": "^13.0.2"
