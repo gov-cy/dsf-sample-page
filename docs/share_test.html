@@ -1,0 +1,175 @@
+
+<!doctype html>
+<html lang="el">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Social -->
+    <meta property="og:description" content="Δοκιμή">
+    <meta property="og:title" content="Δοκιμή share - gov.cy">
+    <meta property="og:url" content="https://gov.cy">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://cdn.jsdelivr.net/gh/gov-cy/govcy-design-system@3.0.0/dist/img/icons-512.png">
+    <meta property="og:site_name" content="gov.cy">
+ 
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gov.cy">
+    <meta property="twitter:title" content="Δοκιμή share - gov.cy">
+    <meta property="twitter:description" content="Δοκιμή">
+    <meta property="twitter:image" content="https://cdn.jsdelivr.net/gh/gov-cy/govcy-design-system@3.0.0/dist/img/icons-512.png">
+ 
+    <!-- Theme --> 
+    
+    <meta name="theme-color" content="#31576F">
+    <link rel="icon" type="image/png" sizes="48x48" href="https://cdn.jsdelivr.net/gh/gov-cy/govcy-design-system@3.0.0/dist/img/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/gov-cy/govcy-design-system@3.0.0/dist/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/gov-cy/govcy-design-system@3.0.0/dist/img/favicon-16x16.png">
+ 
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://cdn.jsdelivr.net/gh/gov-cy/govcy-design-system@3.0.0/dist/img/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://cdn.jsdelivr.net/gh/gov-cy/govcy-design-system@3.0.0/dist/img/apple-touch-icon-120x120-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://cdn.jsdelivr.net/gh/gov-cy/govcy-design-system@3.0.0/dist/img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://cdn.jsdelivr.net/gh/gov-cy/govcy-design-system@3.0.0/dist/img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="https://cdn.jsdelivr.net/gh/gov-cy/govcy-design-system@3.0.0/dist/img/apple-touch-icon-57x57-precomposed.png">
+ 
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gov-cy/govcy-design-system@3.0.0/dist/css/govcy.uds.min.css" integrity="sha384-1zLHWOtnS0hOIz5mVEPZp0UH5gUE6eo0CQcCGA3sF2TyYhHyKOd3Ni8Iy/NjEASU" crossorigin="anonymous">
+    <style>
+        .custom-share-dialog {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .custom-share-dialog a {
+            display: block;
+            margin: 5px 0;
+        }
+
+        .visible {
+            display: block;
+        }
+
+        .share-button {
+            padding: 10px 15px;
+            font-size: 16px;
+            margin: 5px;
+        }
+    </style>
+    <title>Δοκιμή share - gov.cy</title>
+    <meta name="description" content="Δοκιμή">
+  <body>
+    <!--bodyStart-->
+    <section class="govcy-container-fluid" id="bodyStartContainer">
+        <a href="#resultsProducts" class="govcy-skip-link">Μεταφορά στα Κυρίως περιεχόμενο</a>
+        
+    </section>
+
+    <!--beforeMain-->
+    <section class="govcy-container" id="beforeMainContainer">
+        <div class="govcy-phase-banner">
+            <span class="govcy-tag">TESTING</span>
+            <span class="govcy-ml-2">This is not a real service. It is only used for testing purposes. Any submissions made through this service will be ignored.</span>
+        </div>
+    </section>
+
+    <!--main-->
+    <main class="govcy-container" id="mainContainer">
+        <div class="govcy-row">
+            <article class="govcy-col-8" id="resultsProducts">
+                <h1>Δοκιμή share</h1>
+                <p>This is a simple page to demonstrate copy to clipboard, Web Share API, and fallback links.</p>
+
+                <!-- Copy to Clipboard Button -->
+                <button class="govcy-btn-primary" onclick="copyToClipboard()">Copy Link to Clipboard</button>
+            
+                <!-- Web Share API Button -->
+                <button class="govcy-btn-primary" id="shareBtn">Share with URL</button>
+                <button class="govcy-btn-primary" id="shareBtn2">Share only text</button>
+            
+                <!-- Fallback Share Dialog -->
+                <div id="customShareDialog" class="custom-share-dialog">
+                    <h2>Share via </h2>
+                    <a id="emailLink" href="mailto:?subject=&body=">Share via Email</a>
+                    <a id="smsLink" href="sms:?body=">Share via SMS</a>
+                    <h2>Share via Other Platforms</h2>
+                    <a href="https://wa.me/?text=Check+out+this+awesome+content+https%3A%2F%2Fexample.com" target="_blank">Share on WhatsApp</a>
+                    <a href="viber://forward?text=Your Text">Share via viber</a>
+                </div>
+            
+                <script>
+                    // The URL and title to share
+                    const shareData = {
+                        title: 'Αίτημα για εξουσιοδότηση',
+                        text: 'Χρησιμοποία τον σύνδεσμο https://gov-cy.github.io/govcy-design-system-docs/guides/ για να δώσεις εξουσιοδότηση για την έκδοση Διαβατηρίου για τον Αντρέα Αντρέου',
+                        url: 'https://gov-cy.github.io/govcy-design-system-docs/guides/'
+                    };
+                    const shareData2 = {
+                        title: 'Αίτημα για εξουσιοδότηση',
+                        text: 'Χρησιμοποία τον σύνδεσμο https://gov-cy.github.io/govcy-design-system-docs/guides/ για να δώσεις εξουσιοδότηση για την έκδοση Διαβατηρίου για τον Αντρέα Αντρέου'
+                    };
+            
+                    // Copy to Clipboard function
+                    function copyToClipboard() {
+                        navigator.clipboard.writeText(shareData.url)
+                            .then(() => alert('Link copied to clipboard!'))
+                            .catch(error => console.error('Error copying link:', error));
+                    }
+                    
+                    //create sms link function
+                    function createSmsNoNumberLink( message) {
+                        // Encode the message content for use in the SMS URL
+                        const encodedMessage = encodeURIComponent(message);
+                        // Generate the full SMS URL
+                        return `sms:?body=${encodedMessage}`;
+                    }
+            
+                    // Check if the Web Share API is supported
+                    const shareButton = document.getElementById('shareBtn');
+                    const shareButton2 = document.getElementById('shareBtn2');
+                    const customShareDialog = document.getElementById('customShareDialog');
+            
+                    if (navigator.share) {
+                        // If Web Share API is supported
+                        shareButton.addEventListener('click', async () => {
+                            try {
+                                await navigator.share(shareData);
+                                console.log('Content shared successfully!');
+                            } catch (error) {
+                                console.error('Error sharing content:', error);
+                            }
+                        });
+                        shareButton2.addEventListener('click', async () => {
+                            try {
+                                await navigator.share(shareData2);
+                                console.log('Content shared successfully!');
+                            } catch (error) {
+                                console.error('Error sharing content:', error);
+                            }
+                        });
+                    } else {
+                        // If Web Share API is NOT supported, show fallback share options
+                        shareButton.style.display = 'none';  // Hide the Web Share button
+                        shareButton2.style.display = 'none';  // Hide the Web Share button
+                        customShareDialog.classList.add('visible');  // Show the fallback dialog
+                        // Encode the message content for use in the SMS URL
+                        const encodedTitle = encodeURIComponent(shareData.title);
+                        const encodedMessage = encodeURIComponent(shareData.text);
+                        document.getElementById('smsLink').href = `sms:?body=${encodedMessage}`;
+                        document.getElementById('emailLink').href = `mailto:?subject=${encodedTitle}&body=${encodedMessage}`;
+                    }
+                </script>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    
+
+    <!--bodyEnd-->
+    <section  class="govcy-container-fluid" id="bodyEndContainer">
+        
+    </section>    
+    <script src="https://cdn.jsdelivr.net/gh/gov-cy/govcy-design-system@3.0.0/dist/js/govcy.uds.min.js" integrity="sha384-zOuDuogVaaTveh/Ou2iYwCk14zFiSmMk7Ax8yRnXDtOJMyKZH5+ZNibNVwZSKtw+" crossorigin="anonymous"></script>
+                
+</body>
+</html>
