@@ -226,6 +226,13 @@
                                 console.error('Error sharing content:', error);
                             }
                         });
+                        // Handle "Enter" and "Space" keys for accessibility
+                        shareButton.addEventListener('keydown', (event) => {
+                            if (event.key === 'Enter' || event.key === ' ') { // Spacebar key
+                                event.preventDefault(); // Prevent the default scroll behavior for Space
+                                shareButton.click();  // Trigger the click event
+                            }
+                        });
                     } else {
                         // If Web Share API is NOT supported don't show the share button
                         shareButton.style.display = 'none';  
@@ -243,6 +250,13 @@
                             } catch (err) {
                                 // If copying fails,
                                 console.error('Copying failed. Please manually copy the text below.');
+                            }
+                        });
+                        // Handle "Enter" and "Space" keys for accessibility
+                        copyButton.addEventListener('keydown', (event) => {
+                            if (event.key === 'Enter' || event.key === ' ') { // Spacebar key
+                                event.preventDefault(); // Prevent the default scroll behavior for Space
+                                copyButton.click();  // Trigger the click event
                             }
                         });
                      } else {
